@@ -251,6 +251,24 @@ class abe():
                         print(attr)
                         return False
         return True
+def encryptkeysearch(GPP,filename,authority):
+    file = open(filename,'r')
+    data = json.load(file)
+    policy = "(PROVIDER or PUBLICADMIN or TRANSACTIONSUPPORT or (CUSTOMER and VIP))"
+    keys = data['data']
+    res = {}
+    res['id'] = data['id']
+    k = groupObj.random(GT)
+    a = SymmetricCryptoAbstraction(extract_key(k))
+    ct = a.encrypt(keys)
+    ct = objectToBytes(ct,groupObj).decode('UTF-8')
+    res['data'] = ct
+    ct2 = dac.encrypt(GPP,policy,k,authority)
+    res['key'] = objectToBytes(ct2,groupObj).decode('UTF-8')
+    fname = "encrypted" + filename
+    #print(res['key'])
+    writefilejs(res,fname)
+    return True
 def run():
     print("==============Run Program===========")
     GPP = get_GPP()
@@ -282,6 +300,8 @@ def run():
     # writefile(authorities,"AuthorityAA.txt")
     
     authorities = loadObject("AuthorityAA.txt")
+
+    encryptkeysearch(GPP,"key-01.json",authorities[authorityM])
     # aa1 = loadObject("Authority1.txt")
     # aa2 = loadObject("Authority2.txt")
     # aa3 = loadObject("Authority3.txt")
@@ -297,7 +317,7 @@ def run():
     # writefile(khanh,"Khanhke,y.txt")
 
 
-
+    #addUser(GPP,'khanh','Khanhkey.txt', ['PROVIDER','OWNERPROJECT','SALESSPECIALIST'], users, authorities[authorityM])
     # addUser(GPP,'mai','Maikey.txt', ["PUBLICADMIN","DIRECTOR"], users, authorities[authorityM])
     # addUser(GPP,'nam','Namkey.txt', ["PROVIDER","OWNERPROJECT","INVESTOR"], users, authorities[authorityM])
     # addUser(GPP,'nhat','Nhatkey.txt', ["PROVIDER","OWNERPROJECT","SALEAGENT"], users, authorities[authorityM])
@@ -364,7 +384,7 @@ def run():
     policy9 = "(OWNERPROJECT or PUBLICADMIN)"
     policy10 = "(OWNERPROJECT or (TRANSACTIONSUPPORT and (MANAGER or CREDITAPPROVALOFFICER)))"
     policy11 = "(OWNERPROJECT or TRANSACTIONSUPPORT or (CUSTOMER and VIP))"
-    policykeys
+    
     usernamelist = ['khanh','nam']
     listuser = []
 #    listuser.append(khanh)
