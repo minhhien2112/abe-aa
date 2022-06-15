@@ -72,3 +72,5 @@ for k in data:
     for j in data[k]:
         data[k][j] = decrypt(GPP,data[k][j],attributekey)
 print(json.dumps(data,indent=10))
+
+#decryp.py 1 Khanh.txt

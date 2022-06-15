@@ -315,8 +315,6 @@ def run():
     # for attr in KhanhAttribute:
     #     dac.keygen(GPP, authorities[authorityM], attr, users[khanh['id']], khanh['authoritySecretKeys'])
     # writefile(khanh,"Khanhke,y.txt")
-
-
     #addUser(GPP,'khanh','Khanhkey.txt', ['PROVIDER','OWNERPROJECT','SALESSPECIALIST'], users, authorities[authorityM])
     # addUser(GPP,'mai','Maikey.txt', ["PUBLICADMIN","DIRECTOR"], users, authorities[authorityM])
     # addUser(GPP,'nam','Namkey.txt', ["PROVIDER","OWNERPROJECT","INVESTOR"], users, authorities[authorityM])
@@ -332,8 +330,8 @@ def run():
     # addUser(GPP,'chau','Chaukey.txt', ['TRANSACTIONSUPPORT','SALEAGENTS'], users, authorities[authorityM])
     # addUser(GPP,'trung','Trungkey.txt', ['TRANSACTIONSUPPORT','CREDITAPPROVALOFFICER'], users, authorities[authorityM])
     # addUser(GPP,'nguyen','Nguyenkey.txt', ['TRANSACTIONSUPPORT','MANAGER'], users, authorities[authorityM])
-#    addUser(GPP,'giang','Giangkey.txt', ['CUSTOMER','VIP'], users, authorities[authorityM])
-#    addUser(GPP,'loc','Lockey.txt', ['CUSTOMER','NORMAL'], users, authorities[authorityM])
+    # addUser(GPP,'giang','Giangkey.txt', ['CUSTOMER','VIP'], users, authorities[authorityM])
+    # addUser(GPP,'loc','Lockey.txt', ['CUSTOMER','NORMAL'], users, authorities[authorityM])
 
 	# for attr in BobAttribute:
 	# 	dac.keygen(GPP, aa1, attr, users[bob['id']], bob['authoritySecretKeys'])

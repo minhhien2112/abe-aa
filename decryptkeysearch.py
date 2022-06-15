@@ -48,4 +48,8 @@ def decryptkeysearch(filename,fileattr):
     writefilejs(res,fname)
     return True
 if __name__ == '__main__':
-    decryptkeysearch('encryptedkey-01.json',sys.argv[1])
+#    decryptkeysearch('encryptedkey-01.json',sys.argv[1])
+    GPP = get_GPP()
+    print(GPP)
+    GPP2 = loadObject('GPP.txt')
+    print(GPP2)
